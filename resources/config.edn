@@ -1,0 +1,26 @@
+{:server-example.infrastructure.env/env {}
+
+ :server-example.infrastructure.router.core/router
+ {:env #ig/ref :server-example.infrastructure.env/env}
+
+ :server-example.server/server
+ {:env #ig/ref :server-example.infrastructure.env/env
+  :router #ig/ref :server-example.infrastructure.router.core/router
+  :port 3000}
+
+ ;; :picpage.infrastructure.sql.migrate/migrate
+ ;; {:env #ig/ref :picpage.infrastructure.env/env}
+
+ ;; :picpage.infrastructure.sql.sql/sql
+ ;; {:env #ig/ref :picpage.infrastructure.env/env}
+
+
+ ;; :picpage.infrastructure.router.core/router
+ ;; {:env #ig/ref :picpage.infrastructure.env/env
+ ;;  :db #ig/ref :picpage.infrastructure.sql.sql/sql}
+
+ ;; :picpage.server/server
+ ;; {:env #ig/ref :picpage.infrastructure.env/env
+ ;;  :router #ig/ref :picpage.infrastructure.router.core/router
+ ;;  :port 3000}
+ }
